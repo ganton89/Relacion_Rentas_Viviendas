@@ -34,7 +34,7 @@ from scipy.stats import shapiro, poisson, chisquare, expon, kstest
 def EDA(df):
         
         
-        print(f"La forma:")
+        print(f"La forma del DATAFRAME:")
         print(f"{df.shape}\n")
         print(f"\n-----------------------------\n")
         print(f"Las columnas:")
@@ -46,28 +46,40 @@ def EDA(df):
         print(f"Los nulos:")
         print(f"{df.isnull().sum()}\n")
         print(f"\n-----------------------------\n")
-        print(f"Los duplicados:")
-        print(f"{df.duplicated().sum()}\n")
+        
+        print(f"Filas duplicados: {df.duplicated().sum()}")
+        if df.duplicated().sum > 0:
+           print('Las filas duplicadas son:') 
+           print(df[df.duplicated()].head())
+        print("\n-----------------------------------\n")
+
+
+
+
         print(f"\n-----------------------------\n")
         print(f"Los principales estadísticos:")
         print(f"{df.describe().T}\n")
 
         print(f"Las modas de las columnas categóricas:\n")
         columnas_cat = df.select_dtypes(include = 'object')
+        # To print the columns name of Object type
         for columna in columnas_cat:
             if df[columna].isnull().any():
                 print(f"Revisando {columna}")
-                print(df[columna].value_counts())  #mode()[0]
+                print(df[columna].mode()[0])  
                 print("") 
         print(f"\n-----------------------------\n")
 
-        print(" COLUMNAS CATEGÓRICAS")
+        print("COLUMNAS CATEGÓRICAS")
         col_obj = df.select_dtypes(include='object').columns
-        #Lista para guardar columnas
+        #Object list created
 
-        found_obj = False  #Manera de comprobar que vamos a encontra nulos las columnas categoricas
-        #Recorremos el bucle columna por columna
+        found_obj = False 
+        #The way to check if we are going to make sure about nulls in these columns
+        #We go through the loop column by column.
+       
         for col in col_obj:
+            
             por = df[col].isnull().mean() * 100
             if por > 0:
                 print(f" - {col}: {por:.0f}% de nulos")
@@ -93,6 +105,23 @@ def EDA(df):
         if not found_num:
             print(" No hay nulos en columnas numéricas")
 
+
+        print("VISUALIZACIONES NUMÉRICAS (Distribución y Outliers):")
+        num_cols = df.select_dtypes(include=np.number).columns
+        for col in num_cols:
+            fig, axes = plt.subplots(1, 2, figsize=(10, 4))
+            fig.suptitle(f"Distribución y Outliers de '{col}'", fontsize=12, fontweight='bold')
+            
+            # Histograma + KDE
+            sns.histplot(df[col], kde=True, ax=axes[0], color='skyblue')
+            axes[0].set_title("Distribución")
+
+            # Boxplot para ver outliers
+            sns.boxplot(x=df[col], ax=axes[1], color='salmon')
+            axes[1].set_title("Outliers")
+
+            plt.tight_layout()
+            plt.show()
 
         return
 
