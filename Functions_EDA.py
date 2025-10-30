@@ -30,6 +30,23 @@ import scipy.stats as st
 import scipy.stats as stats
 from scipy.stats import shapiro, poisson, chisquare, expon, kstest
 
+def leer_df(ruta):
+    ruta = ruta.strip().lower()
+    if ruta.endswith('.csv'):
+        #Si es un csv se lee de la siguiiente manera
+        df = pd.read_csv(ruta)
+        print('Archivo CSV leído')
+    elif  ruta.endswith('.xlsx'): 
+        df = pd.read_excel(ruta)
+        print('Archivo Excel leído')
+    elif  ruta.endswith('.json'): 
+        df = pd.read_json(ruta)
+    else: 
+        print('No es de ningún tipo correcto')    
+
+    return df
+
+
 
 def EDA(df):
         
@@ -47,13 +64,14 @@ def EDA(df):
         print(f"{df.isnull().sum()}\n")
         print(f"\n-----------------------------\n")
         
-        print(f"Filas duplicados: {df.duplicated().sum()}")
+        #print(f"Filas duplicados: {df.duplicated().sum()}")
+        '''
         if df.duplicated().sum > 0:
            print('Las filas duplicadas son:') 
-           print(df[df.duplicated()].head())
+           print(df.duplicated())
         print("\n-----------------------------------\n")
 
-
+       '''
 
 
         print(f"\n-----------------------------\n")
