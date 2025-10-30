@@ -68,7 +68,6 @@ def EDA(df):
         found_obj = False  #Manera de comprobar que vamos a encontra nulos las columnas categoricas
         #Recorremos el bucle columna por columna
         for col in col_obj:
-            
             por = df[col].isnull().mean() * 100
             if por > 0:
                 print(f" - {col}: {por:.0f}% de nulos")
