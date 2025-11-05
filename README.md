@@ -12,10 +12,12 @@ Este proyecto tiene como objetivo **analizar la relación entre las rentas media
 - Python (pandas, numpy, matplotlib, seaborn)
 - Jupyter Notebook
 - Git / GitHub
+- Power BI para visualización final
 
 ##  Objetivos del análisis
 
 - Explorar cómo varía la renta media entre poblaciones.
-- Comparar el precio medio de alquiler con el nivel de renta.
+- Comparar el precio medio de compra con el nivel de renta.
 - Detectar posibles desequilibrios entre ingresos y precios de vivienda.
 - Identificar zonas tensionadas o con brechas significativas.
+- Donde poder vivir más tranquilo.
