@@ -13,7 +13,6 @@ Este proyecto tiene como objetivo **analizar la relación entre las rentas media
 - Jupyter Notebook
 - Git / GitHub
 - Power BI para visualización final
-- SQL en MySQLworkbench
 
 ##  Objetivos del análisis
 
