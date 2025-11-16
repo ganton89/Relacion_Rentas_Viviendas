@@ -24,4 +24,14 @@ Este proyecto tiene como objetivo **analizar la relación entre las rentas media
 
 ## Conclusiones
 
- - Quizás en estos tiempos sea más fácil vivir con un salario menor en una zona menos tensionada?
+ - La conclusión final: una historia de tensión económica
+
+Al juntar sus tres capas —sueldos, vivienda e hipoteca— el análisis muestra una narrativa clara:
+
+👉 Los salarios crecen, pero no lo suficiente.
+👉 El precio de la vivienda crece más rápido en casi todas las regiones.
+👉 Y las hipotecas empujan el límite económico de muchas familias.
+
+Lo que empieza como datos aislados termina siendo una historia humana:
+la de los ciudadanos que intentan acceder a una vivienda mientras el coste sube…
+y su poder adquisitivo no les sigue el ritmo.
