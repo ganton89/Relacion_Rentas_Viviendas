@@ -13,6 +13,7 @@ Este proyecto tiene como objetivo **analizar la relación entre las rentas media
 - Jupyter Notebook
 - Git / GitHub
 - Power BI para visualización final
+- SQL en MySQLworkbench
 
 ##  Objetivos del análisis
 
@@ -21,3 +22,7 @@ Este proyecto tiene como objetivo **analizar la relación entre las rentas media
 - Detectar posibles desequilibrios entre ingresos y precios de vivienda.
 - Identificar zonas tensionadas o con brechas significativas.
 - Donde poder vivir más tranquilo.
+
+## Conclusiones
+
+ - Quizás en estos tiempos sea más fácil vivir con un salario menor en una zona menos tensionada?
